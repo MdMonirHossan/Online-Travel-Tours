@@ -1,0 +1,18 @@
+body{
+
+}
+nav{
+    background-color: turquoise;
+}
+.navbar-toggler-icon{
+    color: aquamarine;
+}
+.nav-link{
+    color: black;
+}
+footer{
+    background: black;
+}
+footer h5{
+    color: azure;
+}
