@@ -55,6 +55,7 @@
      }
      else {
 
+        session_destroy();
         echo 'Hellooo';
      }
   ?>
