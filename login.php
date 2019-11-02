@@ -5,10 +5,11 @@
     echo '<title>Login Page</title>';
 ?>
 <body>
-	<div  id="page-container">
+	<div id="page-container">
 		<div class="row" >
 			<div class="col-md-4">	</div>
-			<div class="col-md-4">
+			<div class="col-md-4 center-content">
+				<h2><center>Sign In</center></h2>
 				<form action="" class="loginForm">
 				    <div class="form-group">
 				      <label for="email">Email:</label>
@@ -35,15 +36,11 @@
 			<div class="col-md-4">	</div>
 
 		</div>
+		
+
 	</div>
+	<?php
+		include 'footer.php';
+	?>
 </body>
 
-
-
-
-
-
-
-<?php
-include 'footer.php';
-?>
