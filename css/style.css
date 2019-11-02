@@ -1,8 +1,16 @@
 body{
 
 }
+.page-container{
+    position: relative;
+    min-height: 100vh;
+}
 nav{
     background-color: turquoise;
+}
+.col-md-12{
+	padding-left: 0 !important;
+	padding-right:  0 !important;
 }
 .navbar-toggler-icon{
     color: aquamarine;
@@ -10,8 +18,15 @@ nav{
 .nav-link{
     color: black;
 }
+.loginForm{
+	padding: 30px;
+}
+/*Set footer into the bootom*/
 footer{
     background: black;
+    position: absolute;
+  	bottom: 0;
+ 	width: 100%;
 }
 footer h5{
     color: azure;

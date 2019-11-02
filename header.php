@@ -13,14 +13,11 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
   </head>
   <!-- Navigation -->
- 
-  <?php
-    // $_SESSION["favcolor"] = "green";
-    $_SESSION["favanimal"] = "cat";
-    if( isset( $_SESSION['favcolor'] ) ) {
-        echo '
-        <nav class="navbar navbar-expand-lg  static-top">
-            <div class="container-fluid">
+
+
+
+   <nav class="navbar navbar-expand-lg  static-top">
+        <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="images/logo-full.png" alt="Logo" style="">
             </a>
@@ -30,7 +27,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span>
+                        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -42,22 +39,31 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sign Up</a>
-                    </li>
+                   
+                    <?php
+                        // $_SESSION["favcolor"] = "green";
+
+                        if( isset( $_SESSION['favcolor'] ) ) {
+                            echo '  <li  class="nav-item">
+                                        <a class="nav-link" href="#">Logout</a>
+                                     </li>';
+                        }
+                        else{
+                            session_unset();
+                            session_destroy();
+                            echo ' 
+                             <li class="nav-item">
+                                 <a class="nav-link" href="login.php">Login</a>
+                            </li>
+                             <li class="nav-item">
+                                 <a class="nav-link" href="#">Sign Up</a>
+                            </li>';
+                        }
+                    ?>
                 </ul>
             </div>
         </div>
-        </nav>';
-     }
-     else {
+    </nav>
 
-        session_destroy();
-        echo 'Hellooo';
-     }
-  ?>
 
   
