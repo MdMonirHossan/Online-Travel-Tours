@@ -11,6 +11,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script type="text/javascript" src="js/main.js"></script>
   </head>
   <!-- Navigation -->
 
@@ -31,7 +32,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Packages</a>
+                        <a class="nav-link" href="Packages.php">Packages</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
@@ -56,7 +57,7 @@
                                  <a class="nav-link" href="login.php">Login</a>
                             </li>
                              <li class="nav-item">
-                                 <a class="nav-link" href="#">Sign Up</a>
+                                 <a class="nav-link" href="signup.php">Sign Up</a>
                             </li>';
                         }
                     ?>

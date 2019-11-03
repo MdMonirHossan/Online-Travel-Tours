@@ -1,15 +1,27 @@
 
 html , body{
     margin: 0;
-    height: 100%;
     font-family: "Helvetica Neue", Arial, sans-serif;
+    background-color: #ECF0F1 ;
 }
-.page-containerr{
-   min-height: 100%;
-   position: relative;
+.page-container{
+   /*min-height: 100%;*/
+   /*position: relative;*/
+   width: 100%;
+}
+.container-fluid{
+    padding-left: 0 !important;
+    padding-right:  0 !important;
 }
 nav{
     background-color: turquoise;
+}
+button{
+    background-color: turquoise;
+}
+.row{
+    margin-right: 0;
+    margin-left: 0;
 }
 .col-md-12{
 	padding-left: 0 !important;
@@ -21,20 +33,46 @@ nav{
 .nav-link{
     color: black;
 }
+.carousel-item img{
+    object-fit: cover;
+}
 .center-content{
-    margin-top: 45px;
+    margin: 50px;
     padding: 20px;
-    background-color: lightgray;
+    background-color: white;
     box-shadow: 0px 0px 11px 3px black;
 }
 .loginForm{
 	padding: 30px;
 }
+#register-btn{
+    margin-top: 25px;
+}
+.pckg-card{
+    padding: 30px;
+    margin: 20px;
+    background-color:turquoise;
+    border-radius: 10px;
+    box-shadow: 0px 0px 11px 3px black;
+
+}
+.pckg-card p {
+    margin-top: 10px;
+}
+.pckg-img{
+    width: 100%;
+    object-fit: cover;
+    height: 150px;
+    border-radius: 8px;
+}
+.book-btn{
+    background-color: white;
+    width: 120px;
+    float: right;
+}
 /*Set footer into the bootom*/
 footer{
     background: black;
- 	position: absolute;
-    bottom: 0;
     width: 100%;
 }
 footer h5{

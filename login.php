@@ -8,7 +8,7 @@
 	<div id="page-container">
 		<div class="row" >
 			<div class="col-md-4">	</div>
-			<div class="col-md-4 center-content">
+			<div class="col-md-3 center-content">
 				<h2><center>Sign In</center></h2>
 				<form action="" class="loginForm">
 				    <div class="form-group">
@@ -30,7 +30,7 @@
 				        <div class="invalid-feedback">Check this checkbox to continue.</div> -->
 				      </label>
 				    </div>
-				    <button type="submit" class="btn btn-primary">Submit</button>
+				    <button type="submit" class="btn btn-block">Sign In</button>
 			  </form>
 			</div>
 			<div class="col-md-4">	</div>
