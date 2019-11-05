@@ -70,6 +70,13 @@ button{
     width: 120px;
     float: right;
 }
+.contact{
+    padding: 20px;
+}
+#map {
+    height: 100%;
+    width: 100;
+}
 /*Set footer into the bootom*/
 footer{
     background: black;

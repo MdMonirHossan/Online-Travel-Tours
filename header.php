@@ -35,7 +35,7 @@
                         <a class="nav-link" href="Packages.php">Packages</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="contact.php">Contact</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
