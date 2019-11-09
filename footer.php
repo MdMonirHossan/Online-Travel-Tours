@@ -1,7 +1,9 @@
-<footer >
-    <div class="container footer_container">
+
+<footer>
+  
+    <div class="container footer_container" style="padding: 15px 15px 15px 15px;">
         <div class="row">
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-3">
                 <h5>Tab 01</h5>
                 <li> <a href="#">About Us</a> </li>
                 <li> <a href="#">Contact Us</a> </li>
@@ -10,7 +12,7 @@
 
             </div>
 
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-3">
                 <h5>Tab 02</h5>
                 <li> <a href="">Sign Up</a> </li>
                 <li> <a href="">FAQs</a> </li>
@@ -18,7 +20,7 @@
 
             </div>
 
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-3">
                 <h5 >Tab 03</h5>
                 <li> <a href="">Link</a> </li>
                 <li> <a href=""> FAQs</a> </li>
@@ -27,7 +29,7 @@
 
             </div>
 
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-3">
                 <h5>Social</h5>
                 <li> <a href="#">Blog</a> </li>
                 <li> <a href="#">Facebook</a> </li>
