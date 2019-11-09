@@ -39,6 +39,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
                     </li>
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn">More</button>
+                            <div class="dropdown-content">
+                                <a href="search_booking.php">See Your Booking</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
+                        </div>
+                    </li>
                    
                     <?php
                         // $_SESSION["favcolor"] = "green";
