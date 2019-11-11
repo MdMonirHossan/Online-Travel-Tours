@@ -16,6 +16,15 @@ html , body{
 nav{
     background-color: turquoise;
 }
+.navbar-toggler{
+    background-color: white;
+}
+.navbar-toggler-icon{
+  
+}
+.nav-link{
+    color: black;
+}
 .dropbtn {
     border: none;
     padding: 8px;
@@ -57,12 +66,7 @@ button{
 	padding-left: 0 !important;
 	padding-right:  0 !important;
 }
-.navbar-toggler-icon{
-    color: aquamarine;
-}
-.nav-link{
-    color: black;
-}
+
 .carousel-item img{
     object-fit: cover;
 }
