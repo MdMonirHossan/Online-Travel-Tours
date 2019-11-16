@@ -40,20 +40,28 @@
                     <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
                         <ul class="navbar-nav ml-auto">
                         <div class="row d-flex justify-content-between">
-                        <li class="nav-item active">
+                            
+                            <li class="nav-item active col-xs-6">
                                 <!-- <i class="icon-dropbox"></i> -->
-                                <a class="nav-link text-sm-center col-xs-6" href="index.php"><i class="fas fa-home"></i>Home <span class="sr-only">(current)</span>
+                                <a class="nav-link text-sm-center" href="index.php"><i class="fas fa-home"></i>Home <span class="sr-only">(current)</span>
                                 </a>
                             </li>
-                            <li class="nav-item text-sm-center">
-                                <a class="nav-link col-xs-6" href="Packages.php">Packages</a>
-                            </li col-md-3>
-                            <li class="nav-item text-sm-center">
-                                <a class="nav-link col-xs-6" href="contact.php">Contact</a>
+                            
+                            <li class="nav-item text-sm-center col-xs-6">
+                                <a class="nav-link" href="Packages.php">Packages</a>
                             </li>
-                            <li class="nav-item text-sm-center">
-                                <a class="nav-link col-xs-6"  href="#">About</a>
+                            
+                            
+                            <li class="nav-item text-sm-center col-xs-6">
+                                <a class="nav-link" href="contact.php">Contact</a>
                             </li>
+                            
+                            
+                            <li class="nav-item col-xs-6 text-sm-center">
+                                    <a class="nav-link"  href="#">About</a>
+                            </li>
+                            
+                            
             
                         </div>
                                             
