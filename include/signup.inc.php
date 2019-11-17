@@ -7,6 +7,7 @@ if(isset($_POST["signup-submit"])){
     $email = $_POST['email'];
     $pass = $_POST['pass'];
     $repass = $_POST['repass'];
+    $is_admin = false;
 
     if(empty($fullname) || empty($email) || empty($pass) || empty($repass)){
         header("Location: ../signup.php?error=emptyfields&name=".$fullname. "&email=".$email);
@@ -20,8 +21,12 @@ if(isset($_POST["signup-submit"])){
         header("Location: ../signup.php?error=emptyfields&name=".$fullname);
         exit(); 
     }
+    else if(!preg_match("/^[a-z A-Z]*$/", $fullname) && $pass !== $repass ){
+        header("Location: ../signup.php?error=namepass&email=".$email);
+        exit(); 
+    }
     else if(!preg_match("/^[a-z A-Z]*$/", $fullname)){
-        header("Location: ../signup.php?error=emptyfields&email=".$email);
+        header("Location: ../signup.php?error=nameerror&email=".$email);
         exit(); 
     }
     else if($pass !== $repass){
@@ -47,7 +52,7 @@ if(isset($_POST["signup-submit"])){
                 exit();
             } 
             else{
-                $sql = "INSERT INTO users (fullName , email , pass) VALUES (?, ?, ?)";
+                $sql = "INSERT INTO users (fullName , email , pass , is_admin) VALUES (?, ?, ?, ?)";
                 $stmt = mysqli_stmt_init($db_con);
                 if(!mysqli_stmt_prepare($stmt , $sql)){
                     header("Location: ../signup.php?error=sqlerror");
@@ -55,7 +60,7 @@ if(isset($_POST["signup-submit"])){
                 }
                 else{
                     $hash_pass = password_hash($pass , PASSWORD_DEFAULT );
-                    mysqli_stmt_bind_param($stmt, "sss", $fullname , $email, $hash_pass);
+                    mysqli_stmt_bind_param($stmt, "ssss", $fullname , $email, $hash_pass, $is_admin);
                     mysqli_stmt_execute($stmt);
                     header("Location: ../login.php?signup=success");
                     exit();

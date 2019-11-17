@@ -31,6 +31,9 @@ if(isset($_POST["signin-submit"])){
                     session_start();
                     $_SESSION['userId'] = $row['id'];
                     $_SESSION['email'] = $row['email'];
+                    $_SESSION['user_type'] = $row['is_admin'];
+
+                   
 
                     header("Location: ../index.php?login=success");
                     exit();
