@@ -1,14 +1,14 @@
 <?php
-    
     // include header and title
     include 'header.php';
     echo '<title>Contact Page</title>';
 ?>
 <body>
-	<div class="container">
+	<div class="container-fluid">
 		<h1 class="text-center">Contact With Us</h1>
 		<div class="row contact">
-			<div class="col-md-6">
+		<div class="col-md-2"></div>
+			<div class="col-md-4">
 				<h2><center>Contact</center></h2>
 				<form action="" class="">
 				    <div class="form-group">
@@ -28,9 +28,7 @@
 				<div id="map"></div>
 		</div>
 	</div>
-	<?php
-		include 'footer.php';
-	?>
+	
 	<script>
     	var map;
     	function initMap() {
@@ -42,4 +40,8 @@
     </script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAKcAkDvv6dsATz8BJNj4dciYmElHRfz4&callback=initMap"
 	    async defer></script>
+	
+	<?php
+		include 'footer.php';
+	?>
 </body>

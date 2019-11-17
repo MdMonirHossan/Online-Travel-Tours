@@ -18,8 +18,6 @@
                     <div class="form-group">
                         <label for="phone">Phone:</label>
                         <input type="number" class="form-control" id="phone" placeholder="Enter Phone" name="phone" required>
-                        <!--  <div class="valid-feedback">Valid.</div>
-                        <div class="invalid-feedback">Please fill out this field.</div> -->
                     </div>
                     <button type="submit" class="btn btn-block">Search</button>
                 </form>

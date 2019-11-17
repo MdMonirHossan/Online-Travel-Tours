@@ -37,7 +37,7 @@
                     <a class="nav-link" href="contact.php">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="about.php">About</a>
                 </li>
                 <li>
                     <div class="dropdown">
@@ -53,14 +53,12 @@
                 <?php
                     // $_SESSION["favcolor"] = "green";
 
-                    if( isset( $_SESSION['favcolor'] ) ) {
+                    if(isset($_SESSION['userId'])) {
                         echo '  <li  class="nav-item">
-                                    <a class="nav-link" href="#">Logout</a>
+                                    <a class="nav-link" href="include/logout.inc.php">Logout</a>
                                     </li>';
                     }
                     else{
-                        session_unset();
-                        session_destroy();
                         echo ' 
                             <li class="nav-item">
                                 <a class="nav-link" href="login.php">Login</a>

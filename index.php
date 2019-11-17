@@ -1,8 +1,8 @@
 <?php
     
-    // include header and title
-    include 'header.php';
-    echo '<title>Home Page</title>';
+  // include header and title
+  include 'header.php';
+  echo '<title>Home Page</title>';
 ?>
 
   <body>
