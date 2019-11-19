@@ -11,26 +11,26 @@
             <div class="col-md-4 center-content">
                 <h2><center>Booking Info</center></h2>
                 <?php
-                    $error_msg = $error_pass = "";
+                    $error_name = $error_phone = "";
                     if(isset($_GET['error'])){
                         if ($_GET['error'] == "nameerror") {
-                            $error_msg = "Name can have only alphabet!";
+                            $error_name = "Name can have only alphabet!";
                         }
-                        else if ($_GET['error'] == "passwordcheck") {
-                            $error_pass = "Check Password!";
+                        else if ($_GET['error'] == "invalidphone") {
+                            $error_phone = "Invalid Phone Number!";
                         }
-                        else if ($_GET['error'] == "namepass") {
-                            $error_msg = "Name can have only alphabet!";
-                            $error_pass = "Check Password!";
+                        else if($_GET['error'] == "namephone"){
+                            $error_name = "Name can have only alphabet!";
+                            $error_phone = "Invalid Phone Number!";
                         }
                     }
                 ?>
                 <form name="bookform" action="include/booking.inc.php" class="loginForm"  method="post">
                     <div class="form-group">
                         <label for="fullName">Full Name:</label>
-                        <input type="text" class="form-control" id="fullnamne" placeholder="Enter Full Name" name="full-name" required>
+                        <input type="text" class="form-control" id="fullnamne" placeholder="Enter Full Name" name="fullname" required>
                         <?php
-                            echo "<div class='invalid-feedback' style='display:block;'>".$error_msg."</div>";
+                            echo "<div class='invalid-feedback' style='display:block;'>".$error_name."</div>";
                         ?>
                     </div>
                     <div class="form-group">
@@ -40,26 +40,29 @@
                     <div class="form-group">
                         <label for="phone">Phone:</label>
                         <input type="number" class="form-control" id="phone" placeholder="Enter Phone" name="phone" required>
+                        <?php
+                            echo "<div class='invalid-feedback' style='display:block;'>".$error_phone."</div>";
+                        ?>
                     </div>
                     <div class="form-group">
                         <label for="address">Your Address:</label>
                         <input type="text" class="form-control" id="address" placeholder="Type your address.." name="address">
                         <?php
-                            echo "<div class='invalid-feedback' style='display:block;'>".$error_pass."</div>";
+                            // echo "<div class='invalid-feedback' style='display:block;'>".$error_pass."</div>";
                         ?>
                     </div>
                     <div class="form-group">
                         <label for="arrival">Arrival Date:</label>
                         <input type="date" class="form-control" id="arrival" placeholder="Arrival Date" name="arrival" required>
                         <?php
-                            echo "<div class='invalid-feedback' style='display:block;'>".$error_pass."</div>";
+                            // echo "<div class='invalid-feedback' style='display:block;'>".$error_pass."</div>";
                         ?>
                     </div>
                     <div class="form-group">
                         <label for="depart">Deprature Date:</label>
                         <input type="date" class="form-control" id="depart" placeholder="Deprature Date" name="depart" required>
                         <?php
-                            echo "<div class='invalid-feedback' style='display:block;'>".$error_pass."</div>";
+                            // echo "<div class='invalid-feedback' style='display:block;'>".$error_pass."</div>";
                         ?>
                     </div>
                     <div class="form-group">
@@ -78,7 +81,6 @@
                     <div class="form-group">
                         <label for="room">Rooms:</label>
                         <select class="selectbox" name="room" required>
-                            <option value="blank"></option>
                             <option value="single"> Single </option>
                             <option value="double"> Double </option>
                             <option value="delux"> Deluxe </option>
@@ -86,7 +88,7 @@
                             <option value="bunglow"> Bunglow </option>
                         </select>
                     </div>
-                    <button type="submit" name="book-submit" id="book-btn" class="btn btn-block">Book Now</button>
+                    <button type="submit" name="booking-submit" id="book-btn" class="btn btn-block">Book Now</button>
                 </form>
             </div>
             <div class="col-md-4">	</div>

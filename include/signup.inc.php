@@ -48,7 +48,7 @@ if(isset($_POST["signup-submit"])){
             $resultcheck = mysqli_stmt_num_rows($stmt);
 
             if($resultcheck > 0){
-                header("Location: ../signup.php?error=usertaken&email=".$email);
+                header("Location: ../signup.php?error=emailtaken&email=".$email);
                 exit();
             } 
             else{
