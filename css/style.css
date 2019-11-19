@@ -107,6 +107,14 @@ button{
     padding: 20px;
     margin-bottom: 40px;
 }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+.selectbox{
+    width: 100%;
+}
 #map {
     height: 100%;
     width: 100;

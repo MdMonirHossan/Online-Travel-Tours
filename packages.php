@@ -16,7 +16,7 @@
 						</div>
 						<div class="col-md-8">
 							<p>A most modern concept , a combination of design style , space & peaceful farway outlook of garden & swimmingpool. The room is 764 sqft in size featuring 32'' LCD TV with numerious channel. A large writing desk with eronomic chair and free wifi access.</p>
-							<button type="submit" class="book-btn" class="btn">Book Now</button>
+							<a href='bookform.php' class="book-btn btn">Book Now</a>
 						</div>
 					</div>	
 				</div>
@@ -28,7 +28,7 @@
 						</div>
 						<div class="col-md-8">
 							<p>A most modern concept , a combination of design style , space & peaceful farway outlook of garden & swimmingpool. The room is 764 sqft in size featuring 32'' LCD TV with numerious channel. A large writing desk with eronomic chair and free wifi access.</p>
-							<button type="submit" class="book-btn" class="btn ">Book Now</button>
+							<a href='bookform.php' class="book-btn btn">Book Now</a>
 						</div>
 					</div>	
 				</div>
@@ -40,7 +40,7 @@
 						</div>
 						<div class="col-md-8">
 							<p>A most modern concept , a combination of design style , space & peaceful farway outlook of garden & swimmingpool. The room is 764 sqft in size featuring 32'' LCD TV with numerious channel. A large writing desk with eronomic chair and free wifi access.</p>
-							<button type="submit" class="book-btn" class="btn ">Book Now</button>
+							<a href='bookform.php' class="book-btn btn">Book Now</a>
 						</div>
 					</div>	
 				</div>
@@ -52,7 +52,7 @@
 						</div>
 						<div class="col-md-8">
 							<p>A most modern concept , a combination of design style , space & peaceful farway outlook of garden & swimmingpool. The room is 764 sqft in size featuring 32'' LCD TV with numerious channel. A large writing desk with eronomic chair and free wifi access.</p>
-							<button type="submit" class="book-btn" class="btn ">Book Now</button>
+							<a href='bookform.php' class="book-btn btn">Book Now</a>
 						</div>
 					</div>	
 				</div>	
