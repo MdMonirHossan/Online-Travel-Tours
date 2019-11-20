@@ -1,6 +1,11 @@
 <?php
 	session_start();
-	if(!isset($_SESSION['userId'])) {
+	if($_SESSION['user_type'] != 1 && !isset($_SESSION['email'])) {
+		header("Location: ../index.php?error=loginerror");
+		echo "You must login first";
+		exit();
+	}
+	else if(!isset($_SESSION['email'])){
 		header("Location: ../index.php?error=loginerror");
 		echo "You must login first";
 		exit();
