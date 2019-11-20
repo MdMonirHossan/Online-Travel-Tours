@@ -33,10 +33,15 @@ if(isset($_POST["signin-submit"])){
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['user_type'] = $row['is_admin'];
 
-                   
-
-                    header("Location: ../index.php?login=success");
-                    exit();
+                    // setcookie("uid" , $row['email'] , time()+60 );
+                   if($_SESSION['user_type'] == 1){
+                        header("Location: ../admin/booking_req.php?login=success");
+                        exit(); 
+                   }
+                   else{
+                        header("Location: ../index.php?login=success");
+                        exit();
+                   }
 
                 }
                 else{

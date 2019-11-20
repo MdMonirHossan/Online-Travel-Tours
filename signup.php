@@ -11,7 +11,7 @@
 			<div class="col-md-4 center-content">
 				<h2><center>Registration</center></h2>
 				<?php
-					$error_msg = $error_pass = "";
+					$error_msg = $error_pass = $email_taken = "";
 					if(isset($_GET['error'])){
 						if ($_GET['error'] == "nameerror") {
 							$error_msg = "Name can have only alphabet!";
@@ -22,6 +22,10 @@
 						else if ($_GET['error'] == "namepass") {
 							$error_msg = "Name can have only alphabet!";
 							$error_pass = "Check Password!";
+						}
+						else if ($_GET['error'] == "emailtaken") {
+							$email_taken = "Email is already taken!";
+							
 						}
 					}
 				?>
@@ -36,6 +40,9 @@
 				    <div class="form-group">
 				      <label for="email">Email:</label>
 				      <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
+					<?php
+						echo "<div class='invalid-feedback' style='display:block;'>".$email_taken."</div>";
+					?>
 				    </div>
 				    <div class="form-group">
 				      <label for="pwd">Password:</label>
