@@ -1,5 +1,5 @@
 <?php
-  session_start();
+  session_start(); //Session start.
 ?>
 <!doctype html>
 <html lang="en">
@@ -12,29 +12,33 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
   </head>
+
+
   <!-- Navigation -->
-
-
-
 <nav class="navbar navbar-expand-lg  static-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
             <img src="images/logo-full.png" alt="Logo" style="">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+                aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                    <a class="nav-link" href="../index.php">Home</a>
+                </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="booking_req.php">Requests <span class="sr-only">(current)</span>
+                    <a class="nav-link" href="booking_req.php">Requests <span class="sr-only">(current)</span>  <!-- Active nav link when logged in -->
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="register_user.php">User</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.php">Contact</a>
+                    <a class="nav-link" href="add_package.php">Add Package</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="about.php">About</a>
@@ -51,13 +55,13 @@
                 </li>
                 
                 <?php
-                    // $_SESSION["favcolor"] = "green";
-
+                    //Check session status.
                     if(isset($_SESSION['userId'])) {
                         echo '  <li  class="nav-item">
                                     <a class="nav-link" href="../include/logout.inc.php">Logout</a>
                                     </li>';
                     }
+                    // if session in not set.
                     else{
                         echo ' 
                             <li class="nav-item">
