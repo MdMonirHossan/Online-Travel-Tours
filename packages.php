@@ -1,5 +1,5 @@
 <?php
-	
+
 	require "include/config.php";
     // include header and title
     include 'header.php';
@@ -10,6 +10,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<?php
+					//fetch value from DB
 					$sql = "SELECT title, image_direct, detail, price FROM packages";
 					$result = mysqli_query($db_con, $sql);
 					$sl_no= 1;
@@ -20,6 +21,7 @@
 					<h3><center><?php echo $package['title'];?></center></h3>
 					<div class="row">
 						<div class="col-md-4">
+							<!-- image directory -->
 							<img src="admin/uploads/<?php echo $package['image_direct'];?>" class="pckg-img">
 						</div>
 						<div class="col-md-8">
@@ -32,16 +34,12 @@
 				<?php
 						$sl_no++; //Increase count
 					}
-				?>	
+				?>
 			</div>
-			
+
 		</div>
 	</div>
-
-
-
-
-
+	<!-- Footer -->
 	<?php
 		include 'footer.php';
 	?>

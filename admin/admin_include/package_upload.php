@@ -11,8 +11,9 @@
     // Check if image file is a actual image or fake image
     if(isset($_POST["package-submit"])) {
 
-        require "admin_config.php";
+        require "admin_config.php";  //DB connect & configure
 
+        //Check if it is an image
         $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
         if($check !== false) {
             echo "File is an image - " . $check["mime"] . ".";
@@ -46,15 +47,17 @@
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
                 echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
                 $filename = basename( $_FILES["fileToUpload"]["name"]);
-                $sql = "INSERT INTO packages (title , detail , price , image_direct, up_time) VALUES (?, ?, ?, ?, ?)";
+
+                // Insert into DB with php statement
+                $sql = "INSERT INTO packages (title , detail , price , image_direct) VALUES (?, ?, ?, ?)";
                 $stmt = mysqli_stmt_init($db_con);
                 if(!mysqli_stmt_prepare($stmt , $sql)){
                     header("Location: ../add_package.php?error=sqlerror");
                     exit();
                 }
                 else{
-                    $dt = date("Y-m-d");
-                    mysqli_stmt_bind_param($stmt, "sssss", $title , $detail, $price, $filename, $dt);
+                    $dt = date("d-m-Y");   //Date format
+                    mysqli_stmt_bind_param($stmt, "ssss", $title , $detail, $price, $filename);
                     mysqli_stmt_execute($stmt);
                     header("Location: ../add_package.php?upload=success");
                     exit();
@@ -65,8 +68,9 @@
                 echo "Sorry, there was an error uploading your file.";
             }
         }
+        //Close DB Connection
          mysqli_stmt_close($stmt);
-    mysqli_close($db_con);
+         mysqli_close($db_con);
     }
-    
+
 ?>

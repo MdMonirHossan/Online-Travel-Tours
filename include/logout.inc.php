@@ -1,8 +1,8 @@
 <?php
     session_start();
-    session_unset();
-    session_destroy();
-    header("Location: ../index.php?logout=success");
+    session_unset();   //Unset session variable
+    session_destroy(); //destroy session
+    header("Location: ../index.php?logout=success"); //Redirect to home page
     exit();
 
 ?>

@@ -1,7 +1,7 @@
 <?php
     session_start();
     require '../include/config.php'; //DB configuration & connect
-    
+
     // Authenticate user.
 	if($_SESSION['user_type'] != 1) {
 		header("Location: ../index.php?error=loginerror"); //Redirect to home page.
@@ -36,11 +36,11 @@
 				      <input type="text" class="form-control" id="price" placeholder="Add price" name="price" required>
                     </div>
                     <input type="file" name="fileToUpload" id="fileToUpload">
-				    <button type="submit" name="package-submit" class="btn" style="float:right;width:120px;">Add</button>
+				    <button type="submit" name="package-submit" class="btn add-btn">Add</button>
 			    </form>
             </div>
         </div>
     </div>
-    
+
 
 </body>

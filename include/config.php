@@ -1,4 +1,5 @@
 <?php
+//DB configuration
 $db_server_name = "localhost";
 $db_user_name = "root";
 $db_password = "root";
