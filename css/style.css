@@ -116,7 +116,17 @@ ul li {
     color:#3a7d34;
 }
 
-
+/* flight home page */
+#homepage {
+	background-color: #429fdd;
+	width: 800px;
+	font-size: 16px;
+    height: 600px;
+    margin-top: -121px;
+    position: relative;
+    z-index: 20;
+    box-shadow: 1px 0px 11px 10px transparent;
+}
 
 #register-btn{
     margin-top: 25px;

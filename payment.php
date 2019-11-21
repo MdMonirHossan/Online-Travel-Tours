@@ -27,6 +27,7 @@
                 value: '0.01'
                 }
             }]
+            console.log("Payment complete");
             });
         }
         onApprove: function(data, actions) {
