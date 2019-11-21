@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST["signup-submit"])){
 
-    require 'config.php';
+    require 'config.php';  //DB configure
 
     $fullname = $_POST['full-name'];
     $email = $_POST['email'];
@@ -9,26 +9,29 @@ if(isset($_POST["signup-submit"])){
     $repass = $_POST['repass'];
     $is_admin = false;
 
+    //Check empty field
     if(empty($fullname) || empty($email) || empty($pass) || empty($repass)){
-        header("Location: ../signup.php?error=emptyfields&name=".$fullname. "&email=".$email);
+        header("Location: ../signup.php?error=emptyfields&name=".$fullname. "&email=".$email);   //Redirect to smae page with value
         exit();
     }
+    // check email and name pattern
     else if(!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-z A-Z]*$/", $fullname)){
-        header("Location: ../signup.php?error=invalidname&email");
-        exit(); 
+        header("Location: ../signup.php?error=invalidname&email");  //Redirect to smae page
+        exit();
     }
     else if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
         header("Location: ../signup.php?error=emptyfields&name=".$fullname);
-        exit(); 
+        exit();
     }
     else if(!preg_match("/^[a-z A-Z]*$/", $fullname) && $pass !== $repass ){
         header("Location: ../signup.php?error=namepass&email=".$email);
-        exit(); 
+        exit();
     }
     else if(!preg_match("/^[a-z A-Z]*$/", $fullname)){
         header("Location: ../signup.php?error=nameerror&email=".$email);
-        exit(); 
+        exit();
     }
+    //Check password
     else if($pass !== $repass){
         header("Location: ../signup.php?error=passwordcheck&name=".$fullname. "&email=".$email);
         exit();
@@ -38,7 +41,7 @@ if(isset($_POST["signup-submit"])){
         $sql = "SELECT email FROM users WHERE email=?";
         $stmt = mysqli_stmt_init($db_con);
         if(!mysqli_stmt_prepare($stmt , $sql)){
-            header("Location: ../signup.php?error=sqlerror");
+            header("Location: ../signup.php?error=sqlerror");  // Redirect with sql error message
             exit();
         }
         else{
@@ -47,28 +50,29 @@ if(isset($_POST["signup-submit"])){
             mysqli_stmt_store_result($stmt);
             $resultcheck = mysqli_stmt_num_rows($stmt);
 
-            if($resultcheck > 0){
+            if($resultcheck > 0){   //check email for uniqness
                 header("Location: ../signup.php?error=emailtaken&email=".$email);
                 exit();
-            } 
+            }
             else{
-                $sql = "INSERT INTO users (fullName , email , pass , is_admin) VALUES (?, ?, ?, ?)";
+                $sql = "INSERT INTO users (fullName , email , pass , is_admin) VALUES (?, ?, ?, ?)";  //insert value using statement
                 $stmt = mysqli_stmt_init($db_con);
                 if(!mysqli_stmt_prepare($stmt , $sql)){
                     header("Location: ../signup.php?error=sqlerror");
                     exit();
                 }
                 else{
-                    $hash_pass = password_hash($pass , PASSWORD_DEFAULT );
+                    $hash_pass = password_hash($pass , PASSWORD_DEFAULT );  //Password hash
                     mysqli_stmt_bind_param($stmt, "ssss", $fullname , $email, $hash_pass, $is_admin);
                     mysqli_stmt_execute($stmt);
-                    header("Location: ../login.php?signup=success");
+                    header("Location: ../login.php?signup=success");  //Reirect with success message
                     exit();
                 }
-                
+
             }
         }
     }
+    //Close Db connection
     mysqli_stmt_close($stmt);
     mysqli_close($db_con);
 }

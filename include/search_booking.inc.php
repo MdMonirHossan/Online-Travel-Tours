@@ -1,16 +1,16 @@
 <?php
     if(isset($_POST["search-submit"])){
 
-        require 'config.php';
+        require 'config.php';  //Required DB configuration
 
         $email = $_POST['email'];
         $phone = $_POST['phone'];
 
-        $sql ="SELECT * FROM bookng_request WHERE email like'%$email%' AND phone = '$phone' ";
+        $sql ="SELECT * FROM bookng_request WHERE email like'%$email%' AND phone = '$phone' ";  //compare email and number
 
         $stmt = mysqli_stmt_init($db_con);
         if(!mysqli_stmt_prepare($stmt , $sql)){
-            header("Location: ../search_booking.php?error=sqlerror");
+            header("Location: ../search_booking.php?error=sqlerror");   //Redirect to same page
             exit();
         }
         else{
@@ -18,7 +18,7 @@
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
 
-            if($row = mysqli_fetch_assoc($result)){
+            if($row = mysqli_fetch_assoc($result)){  //Fetch all row from Db
                 echo "<br/><h1>Result found </h1><br/>";
                 $name = $row['fullname'];
                 $email = $row['email'];
@@ -31,10 +31,11 @@
                 Arrive date:" .$adate. "<br/> Depart date:" .$ddate. "<br/> People:" .$Person. "<br/> Room :" .$room. "</h3><br/> ";
             }
             else{
-                echo "No resutls";
+                header("Location: ../search_booking.php?error=infoerror");
             }
 
         }
+        //Close DB Connection
         mysqli_stmt_close($stmt);
         mysqli_close($db_con);
     }

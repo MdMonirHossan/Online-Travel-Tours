@@ -1,5 +1,5 @@
 <?php
-    
+
     // include header and title
     include 'header.php';
     echo '<title>SignUp Page</title>';
@@ -11,6 +11,7 @@
 			<div class="col-md-4 center-content">
 				<h2><center>Registration</center></h2>
 				<?php
+        //Get all error message from url
 					$error_msg = $error_pass = $email_taken = "";
 					if(isset($_GET['error'])){
 						if ($_GET['error'] == "nameerror") {
@@ -25,7 +26,7 @@
 						}
 						else if ($_GET['error'] == "emailtaken") {
 							$email_taken = "Email is already taken!";
-							
+
 						}
 					}
 				?>
@@ -34,14 +35,14 @@
 				    	<label for="fullName">Full Name:</label>
 				    	<input type="text" class="form-control" id="fullnamne" placeholder="Enter Full Name" name="full-name" required>
 						<?php
-							echo "<div class='invalid-feedback' style='display:block;'>".$error_msg."</div>";
+							echo "<div class='invalid-feedback' style='display:block;'>".$error_msg."</div>";  //Show error message
 						?>
 				    </div>
 				    <div class="form-group">
 				      <label for="email">Email:</label>
 				      <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
 					<?php
-						echo "<div class='invalid-feedback' style='display:block;'>".$email_taken."</div>";
+						echo "<div class='invalid-feedback' style='display:block;'>".$email_taken."</div>";  //Show error message
 					?>
 				    </div>
 				    <div class="form-group">
@@ -52,7 +53,7 @@
 				      <label for="Rpwd">Retype Password:</label>
 				      <input type="password" class="form-control" id="Rpwd" placeholder="Retype password" name="repass" required>
 				      <?php
-							echo "<div class='invalid-feedback' style='display:block;'>".$error_pass."</div>";
+							echo "<div class='invalid-feedback' style='display:block;'>".$error_pass."</div>";  //Show error message
 						?>
 				    </div>
 				    <button type="submit" name="signup-submit" id="register-btn" class="btn  btn-block">Register</button>
@@ -61,9 +62,10 @@
 			<div class="col-md-4">	</div>
 
 		</div>
-		
+
 
 	</div>
+  <!-- Footer -->
 	<?php
 		include 'footer.php';
 	?>

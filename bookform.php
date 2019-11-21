@@ -1,5 +1,5 @@
 <?php
-    
+
     // include header and title
     include 'header.php';
     echo '<title>Booking Form</title>';
@@ -11,6 +11,7 @@
             <div class="col-md-4 center-content">
                 <h2><center>Booking Info</center></h2>
                 <?php
+                  //Get error message from url
                     $error_name = $error_phone = "";
                     if(isset($_GET['error'])){
                         if ($_GET['error'] == "nameerror") {
@@ -30,6 +31,7 @@
                         <label for="fullName">Full Name:</label>
                         <input type="text" class="form-control" id="fullnamne" placeholder="Enter Full Name" name="fullname" required>
                         <?php
+                        //Show error message
                             echo "<div class='invalid-feedback' style='display:block;'>".$error_name."</div>";
                         ?>
                     </div>
@@ -41,6 +43,7 @@
                         <label for="phone">Phone:</label>
                         <input type="number" class="form-control" id="phone" placeholder="Enter Phone" name="phone" required>
                         <?php
+                        //Show error message
                             echo "<div class='invalid-feedback' style='display:block;'>".$error_phone."</div>";
                         ?>
                     </div>
@@ -94,11 +97,11 @@
             <div class="col-md-4">	</div>
 
         </div>
-            
+
 
     </div>
-
+    <!-- //include footer -->
     <?php
-		include 'footer.php';
-	?>
+		  include 'footer.php';
+	   ?>
 </body>

@@ -10,7 +10,19 @@
             <div class="col-md-4">	</div>
             <div class="col-md-3 center-content">
                 <h2><center>Search Your Booking</center></h2>
+                <?php
+				//Get all error message from url
+					$error_msg = $error_info = "";
+					if(isset($_GET['error'])){
+						if ($_GET['error'] == "infoerror") {
+							$error_info = "Please check your email or phone.May be you don't booked yet!";
+						}
+					}
+				?>
                 <form action="include/search_booking.inc.php" class="loginForm" method="post">
+                    <?php
+						echo "<div class='invalid-feedback' style='display:block;'>".$error_info."</div>";  //Show error message
+					?>
                     <div class="form-group">
                         <label for="email">Email:</label>
                         <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
@@ -24,8 +36,9 @@
             </div>
             <div class="col-md-4">	</div>
         </div>
-    </div>   
-<?php
-    include 'footer.php';
-?>
+    </div> 
+      <!-- Footer -->
+    <?php
+        include 'footer.php';
+    ?>
 </body>

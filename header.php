@@ -49,17 +49,16 @@
                         </div>
                     </div>
                 </li>
-                
-                <?php
-                    // $_SESSION["favcolor"] = "green";
 
+                <?php
+                  //Check session variable
                     if(isset($_SESSION['userId'])) {
                         echo '  <li  class="nav-item">
                                     <a class="nav-link" href="include/logout.inc.php">Logout</a>
                                     </li>';
                     }
                     else{
-                        echo ' 
+                        echo '
                             <li class="nav-item">
                                 <a class="nav-link" href="login.php">Login</a>
                         </li>
@@ -72,6 +71,3 @@
         </div>
     </div>
 </nav>
-
-
-  
