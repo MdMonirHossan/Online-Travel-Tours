@@ -32,6 +32,10 @@ if(isset($_POST["signup-submit"])){
         exit();
     }
     //Check password
+    else if(strlen($pass) < 6 || !preg_match("#.*^(?=.{6,20})(?=.*[A-Z])(?=.*[0-9]).*$#", $pass)){
+        header("Location: ../signup.php?error=passwordpattern&name=".$fullname. "&email=".$email);
+        exit();
+    }
     else if($pass !== $repass){
         header("Location: ../signup.php?error=passwordcheck&name=".$fullname. "&email=".$email);
         exit();

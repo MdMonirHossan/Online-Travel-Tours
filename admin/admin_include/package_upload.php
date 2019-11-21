@@ -49,7 +49,7 @@
                 $filename = basename( $_FILES["fileToUpload"]["name"]);
 
                 // Insert into DB with php statement
-                $sql = "INSERT INTO packages (title , detail , price , image_direct, up_time) VALUES (?, ?, ?, ?, ?)";
+                $sql = "INSERT INTO packages (title , detail , price , image_direct) VALUES (?, ?, ?, ?)";
                 $stmt = mysqli_stmt_init($db_con);
                 if(!mysqli_stmt_prepare($stmt , $sql)){
                     header("Location: ../add_package.php?error=sqlerror");
@@ -57,7 +57,7 @@
                 }
                 else{
                     $dt = date("d-m-Y");   //Date format
-                    mysqli_stmt_bind_param($stmt, "sssss", $title , $detail, $price, $filename, $dt);
+                    mysqli_stmt_bind_param($stmt, "ssss", $title , $detail, $price, $filename);
                     mysqli_stmt_execute($stmt);
                     header("Location: ../add_package.php?upload=success");
                     exit();

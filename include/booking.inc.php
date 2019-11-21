@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST["booking-submit"])){
 
-    require 'config.php'  //DB configure;
+    require 'config.php' ; //DB configure;
 
     $fullname = $_POST['fullname'];
     $email = $_POST['email'];

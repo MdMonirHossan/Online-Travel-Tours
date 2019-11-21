@@ -46,7 +46,7 @@ if(isset($_POST["signin-submit"])){
 
                 }
                 else{
-                    header("Location: ../login.php?error=wrongpassword");   //Redirect to smae page
+                    header("Location: ../login.php?error=loginerror");   //Redirect to smae page
                     exit();
                 }
             }
@@ -58,7 +58,7 @@ if(isset($_POST["signin-submit"])){
     }
 }
 else{
-    header("Location: ../login.php");  //login unsuccessful
+    header("Location: ../login.php?error=loginerror");  //login unsuccessful
     exit();
 }
 
