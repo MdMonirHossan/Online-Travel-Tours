@@ -5,6 +5,7 @@ if(isset($_POST["signin-submit"])){
 
     $email = $_POST['email'];
     $pass = $_POST['pass'];
+    $remember = $_POST['remember'];
 
     if (empty($email) || empty($pass)) {  //Check empty field
         header("Location: ../login.php?error=emptyfields");  //Redirect to smae page
@@ -33,6 +34,13 @@ if(isset($_POST["signin-submit"])){
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['user_type'] = $row['is_admin'];
 
+                    if(!empty($remember)){
+                        setcookie("email" , $row['email'] , time()+60 );
+                        setcookie("pass" , $row['pass'] , time()+60 );
+                    }
+                    else{
+
+                    }
                     // setcookie("uid" , $row['email'] , time()+60 );
                     // Check user admin or not admin
                    if($_SESSION['user_type'] == 1){

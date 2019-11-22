@@ -3,6 +3,7 @@ html , body{
     font-family: "Helvetica Neue", Arial, sans-serif;
     background-color: #ECF0F1 ;
 }
+/* Page custom grid css */
 .page-container{
    /*min-height: 100%;*/
    /*position: relative;*/
@@ -12,6 +13,16 @@ html , body{
     padding-left: 0 !important;
     padding-right:  0 !important;
 }
+.row{
+    margin-right: 0;
+    margin-left: 0;
+}
+.col-md-12{
+	padding-left: 0 !important;
+	padding-right:  0 !important;
+}
+
+/* Navbar css */
 .navbar-brand img {
     border-radius: 50%;
 }
@@ -27,6 +38,7 @@ nav{
 .nav-link{
     color: black;
 }
+/* Dropdown Css */
 .dropbtn {
     border: none;
     padding: 8px;
@@ -60,15 +72,7 @@ nav{
 button{
     background-color: turquoise;
 }
-.row{
-    margin-right: 0;
-    margin-left: 0;
-}
-.col-md-12{
-	padding-left: 0 !important;
-	padding-right:  0 !important;
-}
-
+/* carousel css */
 .carousel-item img{
     object-fit: cover;
 }
@@ -116,7 +120,18 @@ ul li {
     color:#3a7d34;
 }
 
-
+/* flight home page */
+#homepage {
+	background-color: #429fdd;
+    font-size: 16px;
+    padding: 15px;
+    margin-top: -121px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 20;
+    box-shadow: 1px 0px 11px 10px transparent;
+}
 
 #register-btn{
     margin-top: 25px;
@@ -159,7 +174,7 @@ input[type=number]::-webkit-outer-spin-button {
     height: 100%;
     width: 100;
 }
-/* Admin Csss */
+/* Admin table Csss */
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
