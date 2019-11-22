@@ -37,7 +37,7 @@
                         <a class="nav-link" href="add_package.php">Add Package</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.php">About</a>
+                        <a class="nav-link" href="add_flight.php">Add Flight</a>
                     </li>
                     <li>
                         <div class="dropdown">

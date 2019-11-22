@@ -46,6 +46,12 @@
                         <button class="dropbtn">More</button>
                         <div class="dropdown-content">
                             <a href="search_booking.php">See Your Booking</a>
+                            <!-- if user is admin then show admin panel link -->
+                            <?php
+                                if($_SESSION['user_type'] == 1 && isset($_SESSION['email'])) {
+                                    echo "<a href='admin/booking_req.php'>Admin Panel</a>";
+                                } 
+                            ?>
                             <a href="#">Link 2</a>
                             <a href="#">Link 3</a>
                         </div>
