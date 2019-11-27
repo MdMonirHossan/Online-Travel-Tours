@@ -16,7 +16,10 @@
 					if(isset($_GET['error'])){
 						if ($_GET['error'] == "infoerror") {
 							$error_info = "Please check your email or phone.May be you don't booked yet!";
-						}
+                        }
+                        else if($_GET['error'] == "loginerror"){
+                            $error_info = "You have to log in first to check your booking!";
+                        }
 					}
 				?>
                 <form action="include/search_booking.inc.php" class="loginForm" method="post">

@@ -4,13 +4,14 @@ if(isset($_POST["signup-submit"])){
     require 'config.php';  //DB configure
 
     $fullname = $_POST['full-name'];
+    $uname = $_POST['uname'];
     $email = $_POST['email'];
     $pass = $_POST['pass'];
     $repass = $_POST['repass'];
     $is_admin = false;
 
     //Check empty field
-    if(empty($fullname) || empty($email) || empty($pass) || empty($repass)){
+    if(empty($fullname) || empty($uname) || empty($email) || empty($pass) || empty($repass)){
         header("Location: ../signup.php?error=emptyfields&name=".$fullname. "&email=".$email);   //Redirect to smae page with value
         exit();
     }
@@ -42,24 +43,40 @@ if(isset($_POST["signup-submit"])){
     }
     else{
 
-        $sql = "SELECT email FROM users WHERE email=?";
+        $sql = "SELECT email , uname FROM users WHERE email=? OR uname=?";
         $stmt = mysqli_stmt_init($db_con);
         if(!mysqli_stmt_prepare($stmt , $sql)){
             header("Location: ../signup.php?error=sqlerror");  // Redirect with sql error message
             exit();
         }
         else{
-            mysqli_stmt_bind_param($stmt, "s", $email );
+            mysqli_stmt_bind_param($stmt, "ss", $email , $uname );
             mysqli_stmt_execute($stmt);
-            mysqli_stmt_store_result($stmt);
-            $resultcheck = mysqli_stmt_num_rows($stmt);
-
-            if($resultcheck > 0){   //check email for uniqness
-                header("Location: ../signup.php?error=emailtaken&email=".$email);
-                exit();
+            $result = mysqli_stmt_get_result($stmt);
+            //mysqli_stmt_store_result($stmt);
+            //$resultcheck = mysqli_stmt_num_rows($stmt);
+            if($row = mysqli_fetch_assoc($result)){
+                if($uname == $row['uname'] ){
+                    header("Location: ../signup.php?error=unametaken&uname=".$uname);
+                    exit();
+                }
+                else if($email == $row['email'] ){
+                    header("Location: ../signup.php?error=emailtaken&email=".$email);
+                    exit();
+                }
+                else if($uname == $row['uname'] || $email == $row['email'] ){
+                    header("Location: ../signup.php?error=emailuname&email=".$email. "&uname=".$uname);
+                    exit();
+                }
+                
+                
             }
+            // if($resultcheck > 0){   //check email for uniqness
+            //     header("Location: ../signup.php?error=emailtaken&email=".$email);
+            //     exit();
+            // }
             else{
-                $sql = "INSERT INTO users (fullName , email , pass , is_admin) VALUES (?, ?, ?, ?)";  //insert value using statement
+                $sql = "INSERT INTO users (fullName , uname , email , pass , is_admin) VALUES (?, ?, ?, ?, ?)";  //insert value using statement
                 $stmt = mysqli_stmt_init($db_con);
                 if(!mysqli_stmt_prepare($stmt , $sql)){
                     header("Location: ../signup.php?error=sqlerror");
@@ -67,7 +84,7 @@ if(isset($_POST["signup-submit"])){
                 }
                 else{
                     $hash_pass = password_hash($pass , PASSWORD_DEFAULT );  //Password hash
-                    mysqli_stmt_bind_param($stmt, "ssss", $fullname , $email, $hash_pass, $is_admin);
+                    mysqli_stmt_bind_param($stmt, "sssss", $fullname , $uname , $email, $hash_pass, $is_admin);
                     mysqli_stmt_execute($stmt);
                     header("Location: ../login.php?signup=success");  //Reirect with success message
                     exit();
