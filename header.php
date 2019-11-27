@@ -14,20 +14,19 @@
   </head>
   
   <!-- Navigation -->
-<nav class="navbar navbar-expand-lg  static-top">
+<nav class="navbar navbar-expand-lg static-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.php">
             <img src="images/logo.jpg" width=50 height=50 alt="Logo">
             <span><i>Travel</i></span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <img src="images/menu.png" height=50 width=50 alt="">
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span>
-                    </a>
+                    <a class="nav-link" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="Packages.php">Packages</a>
@@ -61,9 +60,8 @@
                 <?php
                   //Check session variable
                     if(isset($_SESSION['userId'])) {
-                        echo '  <li  class="nav-item">
-                                    <a class="nav-link" href="include/logout.inc.php">Logout</a>
-                                    </li>';
+                        echo '<li  class="nav-item"><a class="nav-link" href="profile.php">Profile</a></li>
+                                <li  class="nav-item"><a class="nav-link" href="include/logout.inc.php">Logout</a></li>';
                     }
                     else{
                         echo '

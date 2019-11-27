@@ -17,8 +17,8 @@
 			<div class="col-md-4 center-content">
 				<h2><center>Registration</center></h2>
 				<?php
-        //Get all error message from url
-					$error_msg = $error_pass = $email_taken = "";
+        			//Get all error message from url
+					$error_msg = $error_pass = $email_taken = $uname_taken = "";
 					if(isset($_GET['error'])){
 						if ($_GET['error'] == "nameerror") {
 							$error_msg = "Name can have only alphabet!";
@@ -30,10 +30,20 @@
 							$error_msg = "Name can have only alphabet!";
 							$error_pass = "Check Password!";
 						}
+						else if ($_GET['error'] == "unametaken") {
+							$uname_taken = "User Nameis already taken!";
+
+						}
 						else if ($_GET['error'] == "emailtaken") {
 							$email_taken = "Email is already taken!";
 
 						}
+						else if ($_GET['error'] == "emailuname") {
+							$uname_taken = "User Nameis already taken!";
+							$email_taken = "Email is already taken!";
+
+						}
+						
 					}
 				?>
 				<form name="signup" action="include/signup.inc.php" class="loginForm" onsubmit="return verifyForm()" method="post">
@@ -42,6 +52,13 @@
 				    	<input type="text" class="form-control" id="fullnamne" placeholder="Enter Full Name" name="full-name" required>
 						<?php
 							echo "<div class='invalid-feedback' style='display:block;'>".$error_msg."</div>";  //Show error message
+						?>
+				    </div>
+					<div class="form-group">
+				    	<label for="uname">User Name :</label>
+				    	<input type="text" class="form-control" id="uname" placeholder="Enter user name" name="uname" required>
+						<?php
+							echo "<div class='invalid-feedback' style='display:block;'>".$uname_taken."</div>";  //Show error message
 						?>
 				    </div>
 				    <div class="form-group">
