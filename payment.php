@@ -15,7 +15,7 @@
         <div class="col-md-3"></div>
     </div>
 </div>
-<script src="https://www.paypal.com/sdk/js?client-id=AcJUvIsIe32SL_mTVJaxawHyJmM6AuySvVHjOBdBIwiAdLGXd42h4U-Mn3yRAYda0fl4Baozb7yTojTa"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=AcuwmzsQeEPfdANx8HCFtOTOLq98E4iHnR-PL3aB020Bt34IitqpDMnipkfft8fbsp7NRWjMTWq25kST"></script>
 <script>
     paypal.Buttons({
         createOrder: function(data, actions) {
@@ -33,6 +33,7 @@
             return actions.order.capture().then(function(details) {
                 // This function shows a transaction success message to your buyer.
                 alert('Transaction completed by '+ details.payer.name.given_name);
+                redirect();
             });
         }
         
