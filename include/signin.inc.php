@@ -33,6 +33,10 @@ if(isset($_POST["signin-submit"])){
                     $_SESSION['userId'] = $row['id'];
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['user_type'] = $row['is_admin'];
+                    $_SESSION['name'] = $row['fullName'];
+                    $_SESSION['uname'] = $row['uname'];
+                    $_SESSION['pic'] = $row['picture'];
+
 
                     if(!empty($remember)){
                         setcookie("email" , $row['email'] , time()+60 );

@@ -66,6 +66,6 @@
     </div>
 
     <?php
-        include 'footer.php';
+        include "admin_footer.php";
     ?>
 </body>

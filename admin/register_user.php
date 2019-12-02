@@ -53,5 +53,7 @@
         </div>
     </div> 
 
-
+    <?php
+        include "admin_footer.php";
+    ?>
 </body>

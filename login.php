@@ -28,12 +28,12 @@
 	<div id="page-container">
 		<div class="row" >
 			<div class="col-md-4">	</div>
-			<div class="col-md-3 center-content">
+			<div class="col-md-4 center-content">
 				<?php
 					echo "<div class=' alert-danger alert-dismissible' role='alert' style='display:block;'><b>".$error_msg."</b></div>";  //Show error message
 				?>
 				<h2><center>Sign In</center></h2>
-				<form action="include/signin.inc.php" class="loginForm" method="post">
+				<form action="include/signin.inc.php" class="loginForm" method="post"><hr>
 					<?php
 						echo "<div class='invalid-feedback' style='display:block;'><b>".$error_msg."</b></div>";  //Show error message
 					?>
@@ -54,7 +54,8 @@
 				        <input class="form-check-input" type="checkbox" name="remember" > Remember me
 				      </label>
 				    </div>
-				    <button type="submit" name="signin-submit" class="btn btn-block">Sign In</button>
+				    <button type="submit" name="signin-submit" class="btn btn-block">Sign In</button><hr>
+					<p>Don't have account? <a href="signup.php">Sign up</a>/<a href="">Forgot Password?</a> </p>
 			  </form>
 			</div>
 			<div class="col-md-4">	</div>
