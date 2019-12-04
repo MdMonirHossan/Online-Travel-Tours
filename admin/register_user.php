@@ -21,7 +21,7 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12" style="overflow-x:auto;">
+            <div class="col-md-12 table-responsive" >
                 <!-- User table -->
                 <table>
                     <tr>

@@ -163,7 +163,7 @@
                         </form>
                     </div>
                     <div id="all">
-                        <form role="form" action="SearchResultAll.php" method="post">
+                        <form role="form" action="search_flight.php" method="post">
                             <div class="row"> 
                                 <div class="col-sm-6">
                                     <label for="selectdate">Select a date:</label>
@@ -173,7 +173,7 @@
                             <br>
                             <div class="row">   
                                 <div class="col-sm-6">
-                                    <button type="submit" class="btn btn-primary">Show ALL</button>
+                                    <button type="submit" name="search_all_submit" class="btn btn-primary">Show ALL</button>
                                 </div>
                             </div> 
                         </form>

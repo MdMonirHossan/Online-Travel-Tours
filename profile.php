@@ -66,6 +66,7 @@
                 <center><b>Email : </b><span><?php echo $email; ?></span></center> </b>
 				<form name="signup" action="include/update_prof.inc.php" class="loginForm"  method="post" enctype="multipart/form-data">
                     <h2>Account Info</h2><hr>
+					<?php echo $_COOKIE['email']; ?>
 					<div class="form-group">
 				    	<label for="fullname">Full Name:</label>
 				    	<input type="text" class="form-control" id="fullname" value="<?php echo $name; ?>"  name="fullname" required>

@@ -39,8 +39,8 @@ if(isset($_POST["signin-submit"])){
 
 
                     if(!empty($remember)){
-                        setcookie("email" , $row['email'] , time()+60 );
-                        setcookie("pass" , $row['pass'] , time()+60 );
+                        setcookie("email" , $row['email'] , time()+60*60 , "/" );
+                        //setcookie("pass" , $row['pass'] , time()+60*60 );
                     }
                     else{
 
