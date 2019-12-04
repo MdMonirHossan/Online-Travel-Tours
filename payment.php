@@ -33,7 +33,16 @@
             return actions.order.capture().then(function(details) {
                 // This function shows a transaction success message to your buyer.
                 alert('Transaction completed by '+ details.payer.name.given_name);
-                redirect();
+                // Call your server to save the transaction
+                return fetch('paypal_transaction_complete.php', {
+                    method: 'post',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        orderID: data.orderID
+                    })
+                });
             });
         }
         

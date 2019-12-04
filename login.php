@@ -37,6 +37,7 @@
 					<?php
 						echo "<div class='invalid-feedback' style='display:block;'><b>".$error_msg."</b></div>";  //Show error message
 					?>
+					
 				    <div class="form-group">
 				      <label for="email">Email:</label>
 				      <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
@@ -55,7 +56,7 @@
 				      </label>
 				    </div>
 				    <button type="submit" name="signin-submit" class="btn btn-block">Sign In</button><hr>
-					<p>Don't have account? <a href="signup.php">Sign up</a>/<a href="">Forgot Password?</a> </p>
+					<p>Don't have account? <a href="signup.php">Sign up</a>/<a href="reset_password.php">Forgot Password?</a> </p>
 			  </form>
 			</div>
 			<div class="col-md-4">	</div>
