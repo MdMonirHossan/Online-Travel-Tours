@@ -1,6 +1,6 @@
 
 var feedback = document.getElementById("feedback");
-feedback.style.color = "red";
+//feedback.style.color = "red";
 function verifyForm(){
 
 	var pwd = document.forms['signup']['pass'].value;
@@ -59,3 +59,14 @@ function verifyComment(){
 	}
 
 }
+
+//Register Service Worker
+if ('serviceWorker' in navigator) {
+	console.log('Service worker is supported');
+	window.addEventListener('load', () => {
+	  navigator.serviceWorker
+		.register('sw_cached_site.js')
+		.then(reg => console.log('Service Worker: Registered (Pages)'))
+		.catch(err => console.log(`Service Worker: Error: ${err}`));
+	});
+  }
