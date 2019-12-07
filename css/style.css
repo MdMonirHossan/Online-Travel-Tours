@@ -174,12 +174,6 @@ input[type=number]::-webkit-outer-spin-button {
     height: 100%;
     width: 100;
 }
-<<<<<<< HEAD
-
-/* footer row */
-
-
-=======
 /* Admin table Csss */
 table {
     font-family: arial, sans-serif;
@@ -199,7 +193,6 @@ tr:nth-child(even) {
   float:right;
   width:120px;
 }
->>>>>>> 65fc9fb60c2c4e6b5c481d017953f4412bc5b3e7
 /*Set footer into the bootom*/
 footer{
     height: 250px;
