@@ -38,6 +38,7 @@ nav{
 .nav-link{
     color: black;
 }
+
 /* Dropdown Css */
 .dropbtn {
     border: none;
@@ -51,6 +52,7 @@ nav{
 
 .dropdown-content {
     display: none;
+    margin-left: -80px;
     position: absolute;
     background-color: #f1f1f1;
     min-width: 165px;
@@ -65,10 +67,13 @@ nav{
     display: block;
   }
 
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
 
-.dropdown:hover .dropdown-content {display: block;}
-
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 button{
     background-color: turquoise;
 }
@@ -206,7 +211,7 @@ footer{
     /* height: 250px; */
     padding: 40px;
     background: black;
-    width: 100%;
+    /* width: 100%; */
 }
 footer h5{
     color: azure;

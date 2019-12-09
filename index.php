@@ -49,7 +49,7 @@
   			</div>
   		</div>
     	<hr>
-		<h1 class="text-center">Our Airways Agent</h1>
+		<h1 class="text-center">OUR AIRWAYS PARTNERS</h1><br>
 		<div class="row">
 			<div class="col-md-3 col-sm-6">
 				<div class="card">
@@ -93,7 +93,7 @@
 			</div>
 		</div>
 		<hr>
-		<h1 class="text-center">Places</h1>
+		<h1 class="text-center">SOME BEAUTIFUL PALACES IN BANGLADESH</h1><br>
 		<div class="row mb-5">
 			<div class="col-md-3 col-sm-6">
 				<div class="card"  >
