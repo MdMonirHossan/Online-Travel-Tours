@@ -1,21 +1,18 @@
 
-<footer class="container">
-  
-    
-    <!-- <div class="container footer_container" > -->
+<footer>
+    <div class="container-fluid">
+        <!-- <div class="container footer_container" > -->
         <div class="row">
-            <div class="col-md-3 col-sm-3">
+            <div class="col-md-3 col-xs-6">
                 <h5>Tab 01</h5>
                 <ul>
                     <li> <a href="#">About Us</a> </li>
                     <li> <a href="#">Contact Us</a> </li>
                     <li> <a href="#">Process</a> </li>
                     <li> <a href="#">Book</a> </li>     
-                </ul>
-                
+                </ul>  
             </div>
-
-            <div class="col-md-3 col-sm-3">
+            <div class="col-md-3  col-xs-6">
                 <h5>Tab 02</h5>
                 <ul>
                     <li> <a href="">Sign Up</a> </li>
@@ -23,19 +20,15 @@
                     <li> <a href="">FAQs</a> </li>
                 </ul>
             </div>
-
-            <div class="col-md-3 col-sm-3">
+            <div class="col-md-3 col-xs-6">
                 <h5 >Tab 03</h5>
                 <ul>                        
                     <li> <a href="">Link</a> </li>
                     <li> <a href=""> FAQs</a> </li>
                     <li> <a href="">FAQs</a> </li>
                 </ul>
-
-
             </div>
-
-            <div class="col-md-3 col-sm-3">
+            <div class="col-md-3 col-xs-6">
                 <h5>Social</h5>
                 <ul>
                     <li> <a href="#">Blog</a> </li>
@@ -44,10 +37,9 @@
                     <li> <a href="#">Youtube</a> </li>
                     <li> <a href="#">Google Plus</a> </li>
                 </ul>
-
             </div>
         </div>
-    <!-- </div> -->
+    </div>
 </footer>
  
  
