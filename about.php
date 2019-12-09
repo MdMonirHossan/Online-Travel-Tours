@@ -14,7 +14,7 @@
                 voluptas eos in fugit odit tenetur adipisci placeat beatae? Nihil,
                  architecto! Iusto, est. Sapiente maxime autem voluptatum.
             </h5>
-            <h1>About Us</h1>
+            <!-- <h1>About Us</h1> -->
             <div style="color: blue ; height:50px;">
 
             </div>
