@@ -3,7 +3,7 @@
     <!-- <div class="container-fluid"> -->
         <!-- <div class="container footer_container" > -->
         <div class="row">
-            <div class="col-6 col-md-3">
+            <div class="col-sm-6 col-md-3">
                 <h5>Tab 01</h5>
                 <ul>
                     <li> <a href="#">About Us</a> </li>
@@ -12,7 +12,7 @@
                     <li> <a href="#">Book</a> </li>     
                 </ul>  
             </div>
-            <div class="col-6 col-md-3">
+            <div class="col-sm-6 col-md-3">
                 <h5>Tab 02</h5>
                 <ul>
                     <li> <a href="">Sign Up</a> </li>
