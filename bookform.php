@@ -91,6 +91,11 @@
                             <option value="bunglow"> Bunglow </option>
                         </select>
                     </div>
+                    <div class="form-group">
+                        <?php $amount = $_GET['total']; ?>
+                        <label for="amount">Amount:</label>
+                        <input type="text" class="form-control" id="amount" placeholder="" name="amount" value="<?php echo $amount ; ?>" readonly>
+                    </div>
                     <button type="submit" name="booking-submit" id="book-btn" class="btn btn-block">Book Now</button>
                 </form>
             </div>

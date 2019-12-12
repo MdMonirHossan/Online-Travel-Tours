@@ -42,6 +42,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="about.php">About</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pkg_cart.php"><img src="images/cart.png" height=30 width=30> Cart</a>
+                </li>
                 <li>
                     <div class="dropdown">
                         <button class="dropbtn">More</button>
@@ -85,6 +88,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="signup.php">Sign Up</a>
                         </li>';
+                        
                     }
                 ?>
             </ul>
