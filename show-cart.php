@@ -1,17 +1,4 @@
-<?php
 
-    session_start();
-    require 'include/config.php'; //DB configuration & connect
-
-    include "header.php";
-    // // check login status
-    // if(!isset($_SESSION['email'])){
-	// 	header("Location: ../index.php?error=loginerror");
-	// 	echo "You must login first";
-	// 	exit();
-    // }
-?>
-<body>
     <?php
         if(!isset($_SESSION['email'])){
             header("Location: login.php?error=notloggedin");
@@ -34,7 +21,7 @@
                 echo "<div class='alert alert-info'><strong>Nothing in the shopping cart : ".$rowcount."</strong></div>";
             }
             else{
-                echo "<div class='alert alert-info'>In the shopping cart: ".$rowcount."</div>";
+                echo "<div class='alert alert-info'>You have ".$rowcount." item in the flight shopping cart</div>";
     ?>
                 <div class="container">
                     <div class="row">
@@ -126,8 +113,7 @@
                 </div>
     <?php  
             }
+            header("Location: show-cart.php");
             mysqli_close($db_con);
         }
-        include "footer.php";
     ?>
-</body>

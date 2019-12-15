@@ -1,7 +1,8 @@
 <?php
-	require "include/config.php";
-    // include header and title
+	
+	// include header and title
     include 'header.php';
+	require "include/config.php";
     echo '<title>Packages</title>';
 ?>
 <body>
@@ -41,6 +42,7 @@
 				$pkg_data = json_encode($cart_data);
 				setcookie('shopping_cart', $pkg_data, time() + (86400 * 30), "/");
 				header("location: packages.php?success=1");
+				echo "<script>alert('Helloooo')</script>";
 			}
 			if(isset($_GET["action"])){
 				if($_GET["action"] == "delete"){
@@ -123,6 +125,7 @@
 				</table>
 				<a href="bookform.php?total=<?php echo number_format($total, 2); ?>" style="float:right;"><img src="images/cart.png"> Checkout</a>
 			</div>
+			<?php include "show-cart.php"; ?>
 		</div>
 	</div>
 	<!-- Footer -->

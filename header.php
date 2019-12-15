@@ -54,13 +54,12 @@
                             <?php
                                 if($_SESSION['user_type'] == 1 && isset($_SESSION['email'])) {
                                     echo "<a href='admin/booking_req.php'>Admin Panel</a>";
-                                    echo "<a href='show-cart.php'>Your Cart</a>";
+                                    // echo "<a href='show-cart.php'>Your Cart</a>";
                                 }
                                 else if($_SESSION['user_type'] == 0 || isset($_SESSION['email']) ){
-                                    echo "<a href='show-cart.php'>Your Cart</a>";
+                                    // echo "<a href='show-cart.php'>Your Cart</a>";
                                 }
                             ?>
-                            <a href="#">Link 3</a>
                         </div>
                     </div>
                 </li>
@@ -77,7 +76,7 @@
                             <a class="dropdown-item" href="profile.php">My Account</a>
                             <a class="dropdown-item" href="include/logout.inc.php">Log Out</a>
                         </div>
-                    </li
+                    </li>
                 <?php
                     }
                     else{

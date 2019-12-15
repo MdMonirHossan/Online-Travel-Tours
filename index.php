@@ -10,6 +10,18 @@
   		<div class="row">
         	<!-- Home Page Crasue -->
   			<div class="col-md-12 slider">
+  				<?php
+	  				// Show alert when logged out.
+					if(isset($_GET["logout"])){
+						if($_GET['logout'] == "success"){
+							echo '
+								<div class="alert alert-success alert-dismissible">
+								<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+								Logout successfully..
+								</div>';
+						}
+					}
+  				?>
   				<div id="demo" class="carousel slide" data-ride="carousel">
 					<ul class="carousel-indicators">
 						<li data-target="#demo" data-slide-to="0" class="active"></li>

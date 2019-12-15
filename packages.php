@@ -11,6 +11,17 @@
 		<div class="row">
 			<div class="col-md-12">
 				<?php
+					// Show alert when added to cart.
+					if(isset($_GET["success"])){
+						if($_GET['success'] == "1"){
+							echo '
+								<div class="alert alert-success alert-dismissible">
+								<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+								Item Added into Cart
+								</div>';
+						}
+					}
+			
 					//fetch value from DB
 					$sql = "SELECT id ,title, image_direct, detail, price FROM packages ORDER BY id ASC";
 					$result = mysqli_query($db_con, $sql);

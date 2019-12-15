@@ -43,9 +43,17 @@
                     <?php
                         //Check session status.
                         if(isset($_SESSION['userId'])) {
-                            echo '  <li  class="nav-item">
-                                        <a class="nav-link" href="../include/logout.inc.php">Logout</a>
-                                        </li>';
+                    ?>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="../profile_pic/<?php echo $_SESSION['pic']; ?>" width="30" height="30" class="rounded-circle">
+                                </a>
+                                <div class="dropdown-content">
+                                    <a class="dropdown-item" href="../profile.php">My Account</a>
+                                    <a class="dropdown-item" href="../include/logout.inc.php">Log Out</a>
+                                </div>
+                            </li>
+                    <?php
                         }
                         // if session in not set.
                         else{
