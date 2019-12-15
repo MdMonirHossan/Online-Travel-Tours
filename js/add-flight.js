@@ -47,68 +47,68 @@ $(document).ready(function() {
 
 	$("#search").click(function(){
 		
-		// console.log("clicked");
-		// if(flightno == ""){
+		console.log("clicked");
+		if(flightno == ""){
 
-        // }
-        // else{
-        //     xmlhttp = new XMLHttpRequest();	
-        //     xmlhttp.onreadystatechange = function() {
-        //             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-		// 			var content = xmlhttp.responseText;
+        }
+        else{
+            xmlhttp = new XMLHttpRequest();	
+            xmlhttp.onreadystatechange = function() {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					var content = xmlhttp.responseText;
 					
-		// 			// var myObj = JSON.parse(this.responseText);
+					// var myObj = JSON.parse(this.responseText);
                     
-        //             if(content != "0")
-        //             {
-		// 				document.getElementById("airpalneid").value = flights.id;
-		// 			   console.log(content);
+                    if(content != "0")
+                    {
+						document.getElementById("airpalneid").value = flights.id;
+					   console.log(content);
                         
-		// 			}
-		// 			else
-		// 			{	
-		// 				// feedback.innerHTML = "User is not available";
-		// 				console.log(content);
-		// 			}
-        //         }
-        //     }
+					}
+					else
+					{	
+						// feedback.innerHTML = "User is not available";
+						console.log(content);
+					}
+                }
+            }
             
-        //     xmlhttp.open("GET","admin_include/flight_search.inc.php?flightno="+flightno,true);
-		// 	xmlhttp.send(); 
-        // }
+            xmlhttp.open("GET","admin_include/flight_search.inc.php?flightno="+flightno,true);
+			xmlhttp.send(); 
+        }
 
 
 
-		var url = "admin_include/flight_search.inc.php";	
-		// var flightno = document.getElementById("number").value;
-		$.getJSON(url, {flightno: document.getElementById("number").value}, function(data){
-			if(data.flights == "")
-				alert("No flight found!");
-				else{
+		// var url = "admin_include/flight_search.inc.php";	
+		// // var flightno = document.getElementById("number").value;
+		// $.getJSON(url, {flightno: document.getElementById("number").value}, function(data){
+		// 	if(data.flights == "")
+		// 		alert("No flight found!");
+		// 		else{
 
-			$.each(data.flights, function(i, flight){
-				document.getElementById("flightno").value	 = flight.number;
-				document.getElementById("airplaneid").value = flight.airplane_id;
-				document.getElementById("departure").value = flight.departure;
-				document.getElementById("dtime").value = flight.d_time;
-				document.getElementById("arrival").value = flight.arrival;
-				document.getElementById("atime").value = flight.a_time;
+		// 	$.each(data.flights, function(i, flight){
+		// 		document.getElementById("flightno").value	 = flight.number;
+		// 		document.getElementById("airplaneid").value = flight.airplane_id;
+		// 		document.getElementById("departure").value = flight.departure;
+		// 		document.getElementById("dtime").value = flight.d_time;
+		// 		document.getElementById("arrival").value = flight.arrival;
+		// 		document.getElementById("atime").value = flight.a_time;
 				
-			});	
-			$.each(data.classes, function(i, class_info){
-				if(class_info.flight_name == "Economy")
-				{
-					document.getElementById("ecapacity").value = class_info.capacity;
-					document.getElementById("eprice").value = class_info.price;
-				}
-				else
-				{
-					document.getElementById("bcapacity").value = class_info.capacity;
-					document.getElementById("bprice").value = class_info.price;
-				}
-			});
-		}
-		});
+		// 	});	
+		// 	$.each(data.classes, function(i, class_info){
+		// 		if(class_info.flight_name == "Economy")
+		// 		{
+		// 			document.getElementById("ecapacity").value = class_info.capacity;
+		// 			document.getElementById("eprice").value = class_info.price;
+		// 		}
+		// 		else
+		// 		{
+		// 			document.getElementById("bcapacity").value = class_info.capacity;
+		// 			document.getElementById("bprice").value = class_info.price;
+		// 		}
+		// 	});
+		// }
+		// });
 	});
 	
 	

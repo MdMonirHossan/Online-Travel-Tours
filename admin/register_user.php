@@ -27,6 +27,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
+                        <th>User Name</th>
                         <th>Email</th>
                         <th>Is Admin</th>
                     </tr>
@@ -41,6 +42,7 @@
                     <tr>
                         <td> <?php echo $user['id'];?></td>
                         <td> <?php echo $user['fullName'];?></td>
+                        <td> <?php echo $user['uname'];?></td>
                         <td> <?php echo $user['email'];?></td>
                         <td> <?php echo $user['is_admin'];?></td>
                     </tr>

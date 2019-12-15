@@ -10,6 +10,18 @@
   		<div class="row">
         	<!-- Home Page Crasue -->
   			<div class="col-md-12 slider">
+  				<?php
+	  				// Show alert when logged out.
+					if(isset($_GET["logout"])){
+						if($_GET['logout'] == "success"){
+							echo '
+								<div class="alert alert-success alert-dismissible">
+								<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+								Logout successfully..
+								</div>';
+						}
+					}
+  				?>
   				<div id="demo" class="carousel slide" data-ride="carousel">
 					<ul class="carousel-indicators">
 						<li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -56,8 +68,10 @@
 					<img src="images/emirates.jpeg" height=200 class="card-img-top" alt="...">
 					<div class="card-body">
 						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-primary"> See more..</a>
+						<p class="card-text">Some quick example text to build on the card title and make up 
+							the bulk of the card's content. <span id="dots">...</span><span id="more" style="display:none;">Lorem ipsum, dolor sit amet consectetur 
+							adipisicing elit. Cupiditate fugit commodi placeat autem deserunt itaque asperiores aliquid ut labore incidunt?</span></p>
+							<button onclick="more_btn()" id="more-btn" class="btn btn-primary">Read More</button>
 					</div>
 				</div>
 			</div>
@@ -66,8 +80,9 @@
 					<img src="images/regent.jpg" height=200 class="card-img-top" alt="...">
 					<div class="card-body">
 						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-primary"> See more..</a>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.<span id="dots">...</span><span id="more" style="display:none;">Lorem ipsum, dolor sit amet consectetur 
+							adipisicing elit. Cupiditate fugit commodi placeat autem deserunt itaque asperiores aliquid ut labore incidunt?</span></p>
+							<button onclick="more_btn()" id="more-btn" class="btn btn-primary">Read More</button>
 					</div>
 				</div>
 			</div>
@@ -76,8 +91,9 @@
 					<img src="images/etihad.jpg" height=200 class="card-img-top" alt="...">
 					<div class="card-body">
 						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-primary"> See more..</a>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.<span id="dots">...</span><span id="more" style="display:none;">Lorem ipsum, dolor sit amet consectetur 
+							adipisicing elit. Cupiditate fugit commodi placeat autem deserunt itaque asperiores aliquid ut labore incidunt?</span></p>
+							<button onclick="more_btn()" id="more-btn" class="btn btn-primary">Read More</button>
 					</div>
 				</div>
 			</div>

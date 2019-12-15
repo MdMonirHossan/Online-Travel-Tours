@@ -25,7 +25,7 @@ $(document).ready(function() {
 
 		//validate number
 		if ( pswd.match(/\d/) ) {
-			$('#number').removeClass('invalid').addClass('valid');
+		 	$('#number').removeClass('invalid').addClass('valid');
 		} else {
 			$('#number').removeClass('valid').addClass('invalid');
 		}

@@ -21,7 +21,7 @@
 <body>
     <div class="container">
         <div>
-            <img src="../images/add-flight.jpg" height=225 width=100% alt="" style="object-fit:cover;ß">
+            <img src="../images/add-flight.jpg" height=225 width=100% alt="" style="object-fit:cover;">
         </div>
         <div class="btn-group d-flex" role="group">
 			<div class="btn btn-primary w-100" id="a">Add</div>
@@ -44,7 +44,7 @@
         </div>
         <div id="update">
             <!-- Search flight -->
-            <form class="form-horizontal" role="form">
+            <form class="" role="form">
                 <div class="form-group row">
                     <label class="control-label col-sm-2" for="number">Flight No.</label>
                     <div class="col-sm-6">
@@ -52,7 +52,7 @@
                         
                     </div>
                     <div class="col-sm-2">
-                        <input type="submit" class="btn btn-success btn-block" name="search" id="search" value = "search flight" />
+                        <input type="submit" class="btn btn-successk" name="search" id="search" value = "search flight" />
                     </div>
                 </div>
             </form>
@@ -77,4 +77,5 @@
     <!-- JS file  -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
     <script type="text/javascript" src="../js/add-flight.js"></script>
+    <script type="text/javascript" src="../js/details.js"></script>
 </body>

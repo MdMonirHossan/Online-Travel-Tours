@@ -9,7 +9,7 @@
         <div class="row" >
             <div class="col-md-4">	</div>
             <div class="col-md-4 center-content">
-                <h2><center>Booking Info</center></h2>
+                <h2><center>Booking Info</center></h2><hr>
                 <?php
                   //Get error message from url
                     $error_name = $error_phone = "";
@@ -26,6 +26,17 @@
                         }
                     }
                 ?>
+                <div class="text-center">
+                    <?php 
+                        echo '<h5>Your Packages</h5>';
+                        $cookie_data = stripslashes($_COOKIE['shopping_cart']);
+                        $cart_data = json_decode($cookie_data, true);
+                        foreach($cart_data as $keys => $values)
+                    {
+                        echo $values['name']."<br>";
+                    }
+                    ?>
+                </div>
                 <form name="bookform" action="include/booking.inc.php" class="loginForm"  method="post">
                     <div class="form-group">
                         <label for="fullName">Full Name:</label>
@@ -90,6 +101,11 @@
                             <option value="presidential"> Presidential Suit </option>
                             <option value="bunglow"> Bunglow </option>
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <?php $amount = $_GET['total']; ?>
+                        <label for="amount">Amount:</label>
+                        <input type="text" class="form-control" id="amount" placeholder="" name="amount" value="$<?php echo $amount ; ?>" readonly>
                     </div>
                     <button type="submit" name="booking-submit" id="book-btn" class="btn btn-block">Book Now</button>
                 </form>

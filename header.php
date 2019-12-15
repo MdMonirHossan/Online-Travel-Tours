@@ -42,6 +42,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="about.php">About</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pkg_cart.php"><img src="images/cart.png" height=30 width=30> Cart</a>
+                </li>
                 <li>
                     <div class="dropdown">
                         <button class="dropbtn">More</button>
@@ -51,13 +54,12 @@
                             <?php
                                 if($_SESSION['user_type'] == 1 && isset($_SESSION['email'])) {
                                     echo "<a href='admin/booking_req.php'>Admin Panel</a>";
-                                    echo "<a href='show-cart.php'>Your Cart</a>";
+                                    // echo "<a href='show-cart.php'>Your Cart</a>";
                                 }
                                 else if($_SESSION['user_type'] == 0 || isset($_SESSION['email']) ){
-                                    echo "<a href='show-cart.php'>Your Cart</a>";
+                                    // echo "<a href='show-cart.php'>Your Cart</a>";
                                 }
                             ?>
-                            <a href="#">Link 3</a>
                         </div>
                     </div>
                 </li>
@@ -74,7 +76,7 @@
                             <a class="dropdown-item" href="profile.php">My Account</a>
                             <a class="dropdown-item" href="include/logout.inc.php">Log Out</a>
                         </div>
-                    </li
+                    </li>
                 <?php
                     }
                     else{
@@ -85,6 +87,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="signup.php">Sign Up</a>
                         </li>';
+                        
                     }
                 ?>
             </ul>
