@@ -1,5 +1,8 @@
 <?php
-    session_start();
+    // include header and title
+    include 'admin_header.php';
+    echo '<title>Booking Request</title>';
+    
     require '../include/config.php'; //DB configuration & connect
 
     // Authenticate user.
@@ -14,9 +17,6 @@
 		echo "You must login first";
 		exit();
 	}
-    // include header and title
-    include 'admin_header.php';
-    echo '<title>Booking Request</title>';
 ?>
 <body>
     <div class="container-fluid">

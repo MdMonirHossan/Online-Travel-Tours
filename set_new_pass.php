@@ -1,5 +1,8 @@
 <?php
-    session_start();
+    // include header and title
+    include 'header.php';
+    echo '<title>User Profile</title>';
+
     require 'include/config.php'; //DB configuration & connect
 
     // check login status
@@ -7,9 +10,8 @@
 		header("Location: ../index.php?error=youareloggedin");
 		exit();
 	}
-    // include header and title
-    include 'header.php';
-    echo '<title>User Profile</title>';
+    
+    
 ?>
 <body>
     <div class="container">

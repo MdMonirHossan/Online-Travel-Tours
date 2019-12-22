@@ -48,9 +48,11 @@
                         // Send email to user with the token in a link they can click on
                         $to = $email;
                         $subject = "Reset your password on online-travel-agency.com";
-                        $msg = "Hi there, click on this <a href='../set_new_pass.php?token='" . $token . "'>link</a> to reset your password on our site";
-                        $msg .= "If you didn't then ignore this email";
                         $headers = "From: MDMONIRHOSSAN01820.com";
+                        $headers .= "MIME-Version: 1.0\r\n";
+                        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+                        $msg = "Hi there, click on this <a href=\"https://online-travel-tours.000webhostapp.com/set_new_pass.php?token=" . $token . "\">".$token. "</a> to reset your password on our site";
+                       
                         mail($to, $subject, $msg, $headers);
 
                         header("Location: ../reset_password.php?success=email");  //Reirect with success message

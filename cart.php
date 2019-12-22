@@ -1,6 +1,7 @@
 <?php
 
-    session_start();
+    include "header.php";
+    
     require 'include/config.php'; //DB configuration & connect
 
     // check login status
@@ -9,7 +10,6 @@
 		echo "You must login first";
 		exit();
     }
-    include "header.php";
 
     $num = $_POST['flightno'];
     $time = $_POST['time'];

@@ -2,11 +2,12 @@
     session_start();
     // GET all value through hmlhttp submit
     $uname = $_GET['uname'];
+    $email = $_GET['email'];
 
     require 'config.php';  //DB Configure
     
     // Insert into flight
-    $sql = "SELECT uname FROM users WHERE uname=?";
+    $sql = "SELECT email , uname FROM users WHERE uname=? OR email=?";
     $stmt = mysqli_stmt_init($db_con);
     if(!mysqli_stmt_prepare($stmt , $sql)){   //DB Error
         header("Location: signup.php?error=sqlerror");
@@ -15,7 +16,7 @@
     }
     else{
         // DB Connection Success
-        mysqli_stmt_bind_param($stmt, "s", $uname);
+        mysqli_stmt_bind_param($stmt, "ss", $uname , $email);
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
         if($row = mysqli_fetch_assoc($result)){
@@ -25,12 +26,12 @@
             if($uname == $row['uname'] ){
                 echo "User name not available";
             }
-            else{
-                echo 123;
+            else if ($email == $row['email']){
+                echo "Email is not available";
             }
         }
         else{
-            echo "User name available";
+            echo "Available!";
         }
     }
      

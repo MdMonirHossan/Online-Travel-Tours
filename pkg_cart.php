@@ -42,7 +42,7 @@
 				$pkg_data = json_encode($cart_data);
 				setcookie('shopping_cart', $pkg_data, time() + (86400 * 30), "/");
 				header("location: packages.php?success=1");
-				echo "<script>alert('Helloooo')</script>";
+				
 			}
 			if(isset($_GET["action"])){
 				if($_GET["action"] == "delete"){

@@ -1,5 +1,6 @@
 <?php
     session_start();
+    
     if(isset($_POST["search-submit"])){
 
         require 'config.php';  //Required DB configuration

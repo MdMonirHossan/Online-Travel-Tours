@@ -1,5 +1,6 @@
 <?php
     session_start();
+    
     $name = $_POST['fullname'];
     $uname = $_POST['uname'];
     $email = $_POST['email'];

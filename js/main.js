@@ -46,6 +46,32 @@ function check(str){
 		xmlhttp.send();
 	  }
 }
+
+//Check Email availablity
+function checkEmail(str){
+	if(str.length == 0){
+		document.getElementById('inavalid_feed').innerHTML = '';
+	  }
+	  else{
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("email_feed").innerHTML = this.responseText;
+			
+			if(this.responseText == "Email is not available"){
+				document.getElementById("email_feed").style.color = "red";
+			}
+			else{
+				document.getElementById("email_feed").style.color = "green";
+			}
+			
+		  }
+		};
+		xmlhttp.open("GET", "include/check.inc.php?email="+ str , true);
+		xmlhttp.send();
+	  }
+}
+
 //More btn
 
 function more_btn(){
@@ -64,6 +90,7 @@ function more_btn(){
 		more.style.display = "inline";
 	}
 }
+
 
 //Verify comment
 function verifyComment(){

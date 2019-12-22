@@ -64,7 +64,8 @@
 				    </div>
 				    <div class="form-group">
 				      <label for="email">Email:</label>
-				      <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
+				      <input type="email" class="form-control" id="email" placeholder="Enter Email" onkeyup="checkEmail(this.value)"  name="email" required>
+				      <span id="email_feed" ></span>
 					<?php
 						echo "<div class='invalid-feedback' style='display:block;'>".$email_taken."</div>";  //Show error message
 					?>
@@ -102,7 +103,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/pswd.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
-	<script type="text/javascript" src="js/check.js"></script>
+	<!-- <script type="text/javascript" src="js/check.js"></script> -->
   <!-- Footer -->
 	<?php
 		include 'footer.php';

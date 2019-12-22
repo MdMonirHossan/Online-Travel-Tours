@@ -37,8 +37,14 @@
 				</form>
 			</div>
 			<div class="col-md-7">
+
+				<div style="width: 100%; height: 480px" id="mapContainer">
+					
+				</div>
+
+
 				<!-- <div id="map"></div> -->
-				<div class="mapouter">
+				<!-- <div class="mapouter">
 					<div class="gmap_canvas">
 						<iframe width="797" height="579" id="gmap_canvas" src="https://maps.google.com/maps?q=northsouth&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="yes" marginheight="0" marginwidth="0"></iframe>
 						<a href="https://www.whatismyip-address.com"></a>
@@ -47,11 +53,39 @@
 					.mapouter{position:relative;text-align:right;}
 					.gmap_canvas {overflow:hidden;background:none!important;}
 					</style>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
+
+	<script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
+  		type="text/javascript" charset="utf-8"></script>
+  	<script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
+  		type="text/javascript" charset="utf-8"></script>
+
 	<script>
+	    // Initialize the platform object:
+	    var platform = new H.service.Platform({
+	    'apikey': 'zEUNvrKsBaDcXU2omT9b30JjTitCeS_V7gQ8hvns0gQ'
+	    });
+
+	    // Obtain the default map types from the platform object
+	    var maptypes = platform.createDefaultLayers();
+
+	    // Instantiate (and display) a map object:
+	    var map = new H.Map(
+	    document.getElementById('mapContainer'),
+	    maptypes.vector.normal.map,
+	    {
+	      zoom: 11,
+	      center: { lng: 90.41, lat: 23.81}
+	    });
+  	</script>
+
+
+
+
+	<!-- <script>
     	var map;
     	function initMap() {
 	        map = new google.maps.Map(document.getElementById('map'), {
@@ -62,7 +96,7 @@
     </script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAKcAkDvv6dsATz8BJNj4dciYmElHRfz4&callback=initMap"
 	    async defer></script>
-	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/main.js"></script> -->
 	<?php
 		include 'footer.php';
 	?>

@@ -1,5 +1,6 @@
 <?php
     require "config.php";
+    
     if(isset($_POST["add-to-cart"])){
         $message = '';
         if(isset($_COOKIE["shopping_cart"])){
@@ -32,7 +33,7 @@
         
         $pkg_data = json_encode($cart_data);
         setcookie('shopping_cart', $pkg_data, time() + (86400 * 30), "/");
-        header("location: packages.php?success=1");
+        header("location: ../packages.php?success=1");
     }
     if(isset($_POST["remove_pkg"])){
         $cookie_data = stripslashes($_COOKIE['shopping_cart']);
